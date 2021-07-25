@@ -1,11 +1,9 @@
+// const ItemList = () => {
+//   return (
+//     <div className="itemList">
+//       Item Row
+//     </div>
+//   );
+// }
 
-
-const ItemRow = () => {
-  return (
-    <div className="itemRow">
-      Item Row
-    </div>
-  );
-}
-
-export default ItemRow;
+// export default ItemRow;

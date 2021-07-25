@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import firebase from './firebase';
 import InputForm from './components/InputForm';
-import ListContainer from './components/ListContainer';
+// import ListContainer from './components/ListContainer';
 
 
 import './App.css';
@@ -24,7 +24,6 @@ const App = () => {
       const newArray = [];
 
       for (let propertyName in myData) {
-        // we create a new object with our key and book title, and then push that whole object into the newArray we just made:
         const itemObject = {
           key: propertyName,
           name: myData[propertyName]['name'],
@@ -40,15 +39,43 @@ const App = () => {
   }, [] );
   // End of userEffect
 
+
+  const ListContainer = (props) => {
+    return (
+      <div className="listContainer">
+        List Container
+        <ul>
+          {
+            props.listArray.map((itemObj) => {
+              return (
+                <li key={itemObj.key}>
+                  <p>{itemObj.name}</p>
+                  {/* <button onClick = {() => handleDelete(bookObject.key)}>Delete</button> */}
+                </li>
+                )
+            })
+          }
+        </ul>
+        {/* <CategoryContainer /> */}
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       <InputForm />
-      <ListContainer />
+      <ListContainer listArray = {checkList}/>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
 
 // MVP: Create a checklist for camping items, allowing users to add and delete items onto the list along with quantities and categories, to be stored in Firebase
 

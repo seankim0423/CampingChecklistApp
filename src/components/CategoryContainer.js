@@ -1,12 +1,12 @@
-import ItemRow from './ItemRow'
+// import ItemRow from './ItemRow'
 
-const CategoryContainer = () => {
-  return (
-    <div className="CategoryContainer">
-      Category Container
-      <ItemRow />
-    </div>
-  )
-}
+// const CategoryContainer = () => {
+//   return (
+//     <div className="CategoryContainer">
+//       Category Container
+//       <ItemList />
+//     </div>
+//   )
+// }
 
-export default CategoryContainer;
+// export default CategoryContainer;
