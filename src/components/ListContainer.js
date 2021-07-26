@@ -15,7 +15,7 @@ const ListContainer = (props) => {
   return Object.keys(groupedItems).map((obj, i) => {
     return (
       <CategoryContainer
-        key={obj}
+        key={`category${i}`}
         category={obj}
         itemGroupArray={groupedItems[obj]}
       />

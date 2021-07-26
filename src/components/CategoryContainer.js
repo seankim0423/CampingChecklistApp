@@ -2,11 +2,11 @@ import ItemRow from "./ItemRow";
 
 const CategoryContainer = (props) => {
   return (
-    <li className="categoryContainer">
+    <li key={props.category} className="categoryContainer">
+      <h3>{props.category}</h3>
       <ul>
-        <h3>{props.category}</h3>
-        {props.itemGroupArray.map((item) => {
-          return <ItemRow key={item.key} item={item} />;
+        {props.itemGroupArray.map((item, i) => {
+          return <ItemRow key={`item${i}`} item={item} />;
         })}
       </ul>
     </li>
