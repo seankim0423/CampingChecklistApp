@@ -7,6 +7,7 @@ import "./App.css";
 
 const App = () => {
   const [checkList, setCheckList] = useState([{}]);
+  const [loadedData, setLoadedData] = useState(false);
 
   // This is the useEffect for my Firebase value listener
   useEffect(() => {
@@ -29,17 +30,20 @@ const App = () => {
         newArray.push(itemObject);
       }
       setCheckList(newArray);
+      setLoadedData(true);
     });
   }, []);
   // End of userEffect
 
-  return (
+  return loadedData ? (
     <div className="App">
       <InputForm />
       <ul className="listContainer">
         <ListContainer listArray={checkList} />
       </ul>
     </div>
+  ) : (
+    <h2>Loading</h2>
   );
 };
 

@@ -1,5 +1,4 @@
 import firebase from "../firebase";
-// import CheckBox from "./CheckBox";
 
 const ItemRow = (props) => {
   const handleDelete = (keyOfItemToDelete) => {
@@ -15,15 +14,14 @@ const ItemRow = (props) => {
   };
 
   return (
-    <li className="rowItem">
-      <label>
-        Checked:
-        <input
-          type="checkbox"
-          checked={props.item.checked}
-          onChange={() => handleCheck(props.item.key)}
-        />
-      </label>
+    <li key={props.item.key} className="rowItem">
+      <label htmlFor="checkbox">Checked:</label>
+      <input
+        id="checkbox"
+        type="checkbox"
+        checked={props.item.checked}
+        onChange={() => handleCheck(props.item.key)}
+      />
 
       <p>Name: {props.item.name}</p>
       <p>Quantity: {props.item.quantity}</p>

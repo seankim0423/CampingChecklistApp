@@ -64,7 +64,6 @@ const InputForm = () => {
         <select
           name="newItemCategory"
           id="newItemCategory"
-          id="newItemCategory"
           onChange={handleChange}
           value={itemCategory}
         >
