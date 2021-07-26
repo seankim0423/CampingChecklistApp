@@ -1,24 +1,26 @@
-// import CategoryContainer from './CategoryContainer';
+import CategoryContainer from "./CategoryContainer";
 
-// const ListContainer = (props) => {
-//   return (
-//     <div className="listContainer">
-//       List Container
-//       <ul>
-//         {
-//           props.listArray.map((itemObj) => {
-//             return (
-//               <li key={itemObj.key}>
-//                 <p>{itemObj.name}</p>
-//                 {/* <button onClick = {() => handleDelete(bookObject.key)}>Delete</button> */}
-//               </li>
-//               )
-//           })
-//         }
-//       </ul>
-//       <CategoryContainer />
-//     </div>
-//   );
-// }
+const ListContainer = (props) => {
+  // Grouping Technique resource: https://gist.github.com/JamieMason/0566f8412af9fe6a1d470aa1e089a752
+  const groupBy = (key) => (array) =>
+    array.reduce((objectsByKeyValue, obj) => {
+      const value = obj[key];
+      objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(obj);
+      return objectsByKeyValue;
+    }, {});
 
-// export default ListContainer;
+  const groupByCategory = groupBy("category");
+  const groupedItems = groupByCategory(props.listArray);
+
+  return Object.keys(groupedItems).map((obj, i) => {
+    return (
+      <CategoryContainer
+        key={obj}
+        category={obj}
+        itemGroupArray={groupedItems[obj]}
+      />
+    );
+  });
+};
+
+export default ListContainer;
