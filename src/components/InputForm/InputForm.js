@@ -1,10 +1,13 @@
 import { useState } from "react";
 import firebase from "../../firebase";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
+
 const InputForm = () => {
   const [itemName, setItemName] = useState("");
   const [itemQty, setItemQty] = useState("");
-  const [itemCategory, setItemCategory] = useState("Select Category");
+  const [itemCategory, setItemCategory] = useState("placeholder");
 
   const handleChange = (e) => {
     // setUserInput(e.target.value);
@@ -35,7 +38,7 @@ const InputForm = () => {
 
       setItemName("");
       setItemQty("");
-      setItemCategory("Select");
+      setItemCategory("placeholder");
     } else {
       alert("Missing input");
     }
@@ -43,9 +46,9 @@ const InputForm = () => {
 
   return (
     <div className="formContainer">
-      <form action="submit" onSubmit={handleSubmit}>
+      <form className="newItemForm" action="submit" onSubmit={handleSubmit}>
         <label className="sr-only" htmlFor="newItemName">
-          Item Name:{" "}
+          Item Name
         </label>
         <input
           type="text"
@@ -54,9 +57,10 @@ const InputForm = () => {
           onChange={handleChange}
           value={itemName}
           placeholder="Item Name"
+          maxlength="20"
         />
         <label className="sr-only" htmlFor="newItemQuantity">
-          Quantity:{" "}
+          Quantity
         </label>
         <input
           type="text"
@@ -69,20 +73,23 @@ const InputForm = () => {
         <label htmlFor="newItemCategory" className="sr-only">
           Category:
         </label>
-
         <select
           name="newItemCategory"
           id="newItemCategory"
           onChange={handleChange}
           value={itemCategory}
         >
-          <option disabled>Select Category</option>
+          <option disabled value="placeholder">
+            Select Category
+          </option>
           <option value="Camping Gear">Camping Gear</option>
           <option value="Food">Food</option>
           <option value="Clothing">Clothing</option>
         </select>
 
-        <button type="submit">Add</button>
+        <button className="iconButton changeBlue" type="submit">
+          <FontAwesomeIcon icon={faPlusSquare} />
+        </button>
       </form>
     </div>
   );

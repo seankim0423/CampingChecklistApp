@@ -35,16 +35,19 @@ const App = () => {
 
   return loadedData ? (
     <div className="App wrapper">
-      <header></header>
-      <main>
+      <header>
         <h1>Camping Checklist</h1>
-        <InputForm />
-        <ListContainer listArray={checkList} />
-      </main>
-      <footer>Made at Juno</footer>
+      </header>
+
+      <InputForm />
+      <ListContainer listArray={checkList} />
+
+      <footer>
+        <p>Made at Juno</p>
+      </footer>
     </div>
   ) : (
-    <h2>Loading...</h2>
+    <h2 className="loadingText">Loading...</h2>
   );
 };
 

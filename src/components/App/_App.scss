@@ -1,27 +1,16 @@
-header {
-  display: block;
+body {
   background-image: url(../../assets/header-background-camping-2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 30rem;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  padding: 20px 0;
 }
 
-main {
-  margin-top: 10rem;
-  margin-bottom: 5rem;
-  padding: 5rem;
-}
-
-h1 {
-  color: white;
-  letter-spacing: 0.9rem;
+header {
   margin: 0;
-  margin-bottom: 1rem;
   padding: 0;
+}
+
+.loadingText {
+  color: white;
 }

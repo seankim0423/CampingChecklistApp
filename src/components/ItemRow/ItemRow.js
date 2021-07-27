@@ -19,30 +19,35 @@ const ItemRow = (props) => {
       checked: !props.item.checked,
     });
   };
+  const { name, quantity, key, checked } = props.item;
 
   return (
     <li className="rowItem">
       {props.item.checked ? (
         <button
-          className="iconButton checkButton"
-          onClick={() => handleCheck(props.item.key)}
+          className="iconButton checkButton changeBlue"
+          onClick={() => handleCheck(key)}
         >
           <FontAwesomeIcon icon={faCheckSquare} />
         </button>
       ) : (
         <button
-          className="iconButton checkButton"
-          onClick={() => handleCheck(props.item.key)}
+          className="iconButton checkButton changeBlue"
+          onClick={() => handleCheck(key)}
         >
           <FontAwesomeIcon icon={faSquare} />
         </button>
       )}
 
-      <p>{props.item.name}</p>
-      <p>Qty.: {props.item.quantity}</p>
+      <p className={`itemNameTextbox ${checked ? "checkedItem" : ""}`}>
+        {name}
+      </p>
+      <p className={`itemQuantitybox ${checked ? "checkedItem" : ""}`}>
+        {quantity}
+      </p>
       <button
-        className="iconButton deleteButton"
-        onClick={() => handleDelete(props.item.key)}
+        className="iconButton changeRed"
+        onClick={() => handleDelete(key)}
       >
         <FontAwesomeIcon icon={faTrashAlt} />
       </button>

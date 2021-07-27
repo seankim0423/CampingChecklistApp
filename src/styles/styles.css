@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet');
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -290,32 +291,60 @@ body {
   font-size: 1.6rem;
 }
 
-header {
-  display: block;
-  background-image: url(../../assets/header-background-camping-2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 30rem;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-main {
-  margin-top: 10rem;
-  margin-bottom: 5rem;
-  padding: 5rem;
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 100%;
 }
 
 h1 {
   color: white;
+  text-align: center;
   letter-spacing: 0.9rem;
-  margin: 0;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+ul {
   padding: 0;
+}
+
+.iconButton {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 2rem;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.changeRed:hover,
+.changeRed:focus {
+  color: red;
+}
+
+.changeBlue:hover,
+.changeBlue:focus {
+  color: blue;
+}
+
+body {
+  background-image: url(../../assets/header-background-camping-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px 0;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+}
+
+.loadingText {
+  color: white;
 }
 
 h2 {
@@ -340,28 +369,34 @@ h2 {
   padding: 1rem 5rem;
 }
 
+.newItemForm {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .rowItem {
   display: flex;
   justify-content: space-around;
   list-style: none;
+  border-top: grey 1px solid;
+  margin: 0 20px;
+  text-align: center;
+  gap: 10px;
 }
 
-.iconButton {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  font-size: 2rem;
-  padding: 2px;
-  cursor: pointer;
+.itemNameTextbox {
+  width: 200px;
 }
 
-.deleteButton:hover,
-.deleteButton:focus {
-  color: red;
+.itemQuantityTextbox {
+  width: 50px;
+}
+
+.checkedItem {
+  text-decoration: line-through;
+  color: grey;
 }
 
 .listContainer {

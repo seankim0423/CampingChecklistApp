@@ -5,3 +5,10 @@
   background-color: white;
   padding: 1rem 5rem;
 }
+
+.newItemForm {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
