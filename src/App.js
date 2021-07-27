@@ -3,7 +3,7 @@ import firebase from "./firebase";
 import InputForm from "./components/InputForm";
 import ListContainer from "./components/ListContainer";
 
-import "./App.css";
+import "./styles/styles.scss";
 
 const App = () => {
   const [checkList, setCheckList] = useState([{}]);
@@ -36,11 +36,14 @@ const App = () => {
   // End of userEffect
 
   return loadedData ? (
-    <div className="App">
-      <InputForm />
-      <ul className="listContainer">
+    <div className="App wrapper">
+      <header></header>
+      <main>
+        <h1>Camping Checklist</h1>
+        <InputForm />
         <ListContainer listArray={checkList} />
-      </ul>
+      </main>
+      <footer>Made at Juno</footer>
     </div>
   ) : (
     <h2>Loading</h2>

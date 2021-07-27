@@ -14,7 +14,7 @@ const ItemRow = (props) => {
   };
 
   return (
-    <li key={props.item.key} className="rowItem">
+    <li className="rowItem">
       <label htmlFor="checkbox">Checked:</label>
       <input
         id="checkbox"

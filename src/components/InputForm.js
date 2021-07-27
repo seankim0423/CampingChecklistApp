@@ -1,10 +1,12 @@
 import { useState } from "react";
 import firebase from "../firebase";
 
+import "./InputForm.css";
+
 const InputForm = () => {
   const [itemName, setItemName] = useState("");
   const [itemQty, setItemQty] = useState("");
-  const [itemCategory, setItemCategory] = useState("Select");
+  const [itemCategory, setItemCategory] = useState("Select Category");
 
   const handleChange = (e) => {
     // setUserInput(e.target.value);
@@ -44,22 +46,31 @@ const InputForm = () => {
   return (
     <div className="formContainer">
       <form action="submit" onSubmit={handleSubmit}>
-        <h1>Camping Checklist</h1>
-        <label htmlFor="newItemName">Item Name: </label>
+        <label className="sr-only" htmlFor="newItemName">
+          Item Name:{" "}
+        </label>
         <input
           type="text"
           id="newItemName"
+          className="newItemName"
           onChange={handleChange}
           value={itemName}
+          placeholder="Item Name"
         />
-        <label htmlFor="newItemQuantity">Quantity: </label>
+        <label className="sr-only" htmlFor="newItemQuantity">
+          Quantity:{" "}
+        </label>
         <input
           type="text"
           id="newItemQuantity"
+          className="newItemQuantity"
           onChange={handleChange}
           value={itemQty}
+          placeholder="Quantity"
         />
-        <label htmlFor="newItemCategory">Category: </label>
+        <label htmlFor="newItemCategory" className="sr-only">
+          Category:
+        </label>
 
         <select
           name="newItemCategory"
@@ -67,7 +78,7 @@ const InputForm = () => {
           onChange={handleChange}
           value={itemCategory}
         >
-          <option disabled>Select</option>
+          <option disabled>Select Category</option>
           <option value="Camping Gear">Camping Gear</option>
           <option value="Food">Food</option>
           <option value="Clothing">Clothing</option>
