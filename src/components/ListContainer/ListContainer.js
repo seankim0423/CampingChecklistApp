@@ -1,6 +1,6 @@
-import CategoryContainer from "./CategoryContainer";
+import CategoryContainer from "../CategoryContainer/CategoryContainer";
 
-import "./ListContainer.css";
+// import "./ListContainer.css";
 
 const ListContainer = (props) => {
   // Grouping Technique resource: https://gist.github.com/JamieMason/0566f8412af9fe6a1d470aa1e089a752
@@ -25,7 +25,6 @@ const ListContainer = (props) => {
           />
         );
       })}
-      ;
     </ul>
   );
 };

@@ -1,7 +1,5 @@
 import { useState } from "react";
-import firebase from "../firebase";
-
-import "./InputForm.css";
+import firebase from "../../firebase";
 
 const InputForm = () => {
   const [itemName, setItemName] = useState("");

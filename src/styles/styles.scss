@@ -1,31 +1,7 @@
-.App {
-  width: 80rem;
-}
-
-header {
-  display: block;
-  background-image: url(../assets/header-background-camping.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 30rem;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-main {
-  margin-top: 10rem;
-  margin-bottom: 5rem;
-  padding: 5rem;
-}
-
-h1 {
-  color: white;
-  letter-spacing: 0.9rem;
-  margin: 0;
-  margin-bottom: 1rem;
-  padding: 0;
-}
+@import "./setup";
+@import "./fonts";
+@import "../components/App/App";
+@import "../components/CategoryContainer/CategoryContainer";
+@import "../components/InputForm/InputForm";
+@import "../components/ItemRow/ItemRow";
+@import "../components/ListContainer/ListContainer";

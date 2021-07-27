@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import firebase from "./firebase";
-import InputForm from "./components/InputForm";
-import ListContainer from "./components/ListContainer";
-
-import "./styles/styles.scss";
+import firebase from "../../firebase";
+import InputForm from "../InputForm/InputForm";
+import ListContainer from "../ListContainer/ListContainer";
 
 const App = () => {
   const [checkList, setCheckList] = useState([{}]);
@@ -46,7 +44,7 @@ const App = () => {
       <footer>Made at Juno</footer>
     </div>
   ) : (
-    <h2>Loading</h2>
+    <h2>Loading...</h2>
   );
 };
 
