@@ -1,9 +1,6 @@
 import { useState } from "react";
 import firebase from "../../firebase";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
-
 const InputForm = () => {
   const [itemName, setItemName] = useState("");
   const [itemQty, setItemQty] = useState("");
