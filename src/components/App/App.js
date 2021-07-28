@@ -42,9 +42,9 @@ const App = () => {
       <InputForm />
       <ListContainer listArray={checkList} />
 
-      <footer>
+      {/* <footer>
         <p>Made at Juno</p>
-      </footer>
+      </footer> */}
     </div>
   ) : (
     <h2 className="loadingText">Loading...</h2>

@@ -39,14 +39,14 @@ const ItemRow = (props) => {
         </button>
       )}
 
-      <p className={`itemNameTextbox ${checked ? "checkedItem" : ""}`}>
+      <p className={`itemNameTextBox ${checked ? "checkedItem" : ""}`}>
         {name}
       </p>
-      <p className={`itemQuantitybox ${checked ? "checkedItem" : ""}`}>
+      <p className={`itemQuantityTextBox ${checked ? "checkedItem" : ""}`}>
         {quantity}
       </p>
       <button
-        className="iconButton changeRed"
+        className="iconButton deleteButton changeRed"
         onClick={() => handleDelete(key)}
       >
         <FontAwesomeIcon icon={faTrashAlt} />

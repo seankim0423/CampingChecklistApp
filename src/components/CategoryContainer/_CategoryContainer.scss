@@ -1,13 +1,8 @@
 h2 {
-  text-align: center;
+  border-bottom: 1.5px black solid;
+  padding-bottom: 3px;
 }
 
 .categoryContainer {
-  border-radius: 5px;
-  min-width: 30rem;
-  max-width: 50%;
-  background-color: white;
-  flex: 1 0 0;
-  border: black 1px solid;
   list-style: none;
 }

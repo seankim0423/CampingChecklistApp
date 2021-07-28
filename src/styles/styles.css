@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet');
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -291,16 +291,24 @@ body {
   font-size: 1.6rem;
 }
 
-* {
-  font-family: "Roboto", sans-serif;
+*,
+select,
+input {
+  font-family: "Poppins", sans-serif;
   font-size: 100%;
 }
 
 h1 {
-  color: white;
-  text-align: center;
-  letter-spacing: 0.9rem;
   font-size: 3rem;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }
 
 ul {
@@ -308,6 +316,9 @@ ul {
 }
 
 .iconButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
   color: inherit;
   border: none;
@@ -315,9 +326,6 @@ ul {
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  font-size: 2rem;
-  padding: 2px;
-  cursor: pointer;
 }
 
 .changeRed:hover,
@@ -331,11 +339,15 @@ ul {
 }
 
 body {
-  background-image: url(../../assets/header-background-camping-2.jpg);
+  background-image: url(../../assets/background-img-copy.jpeg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
-  padding: 20px 0;
+}
+
+.App {
+  width: 75%;
+  margin: 120px auto;
 }
 
 header {
@@ -348,50 +360,52 @@ header {
 }
 
 h2 {
-  text-align: center;
+  border-bottom: 1.5px black solid;
+  padding-bottom: 3px;
 }
 
 .categoryContainer {
-  border-radius: 5px;
-  min-width: 30rem;
-  max-width: 50%;
-  background-color: white;
-  flex: 1 0 0;
-  border: black 1px solid;
   list-style: none;
-}
-
-.formContainer {
-  border: 1px black solid;
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 13px 2px rgba(35, 26, 83, 0.52);
-  background-color: white;
-  padding: 1rem 5rem;
 }
 
 .newItemForm {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  gap: 13px;
   flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.addButton {
+  padding: 0;
+  font-size: 3rem;
+}
+
+.newItemName,
+.newItemCategory,
+.newItemQuantity {
+  padding: 5px 5px;
+  color: black;
+  border: black solid 2px;
+  border-radius: 6px;
+  width: 170px;
 }
 
 .rowItem {
   display: flex;
-  justify-content: space-around;
   list-style: none;
-  border-top: grey 1px solid;
-  margin: 0 20px;
-  text-align: center;
-  gap: 10px;
+  gap: 5px;
+  margin: 15px 0;
 }
 
-.itemNameTextbox {
-  width: 200px;
+.itemNameTextBox {
+  width: 150px;
+  margin-left: 5px;
 }
 
-.itemQuantityTextbox {
-  width: 50px;
+.itemQuantityTextBox {
+  width: 30px;
+  margin-right: 10px;
+  text-align: right;
 }
 
 .checkedItem {
@@ -399,9 +413,20 @@ h2 {
   color: grey;
 }
 
+.rowItem p {
+  line-height: 2rem;
+  padding-top: 3px;
+}
+
+.checkButton,
+.deleteButton {
+  font-size: 1.7rem;
+}
+
 .listContainer {
   display: flex;
   flex-wrap: wrap;
+  margin: 0;
   padding: 0;
-  gap: 10px;
+  gap: 30px;
 }/*# sourceMappingURL=styles.css.map */

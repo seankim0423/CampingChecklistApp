@@ -1,22 +1,32 @@
 .rowItem {
   display: flex;
-  justify-content: space-around;
   list-style: none;
-  border-top: grey 1px solid;
-  margin: 0 20px;
-  text-align: center;
-  gap: 10px;
+  gap: 5px;
+  margin: 15px 0;
 }
 
-.itemNameTextbox {
-  width: 200px;
+.itemNameTextBox {
+  width: 150px;
+  margin-left: 5px;
 }
 
-.itemQuantityTextbox {
-  width: 50px;
+.itemQuantityTextBox {
+  width: 30px;
+  margin-right: 10px;
+  text-align: right;
 }
 
 .checkedItem {
   text-decoration: line-through;
   color: grey;
+}
+
+.rowItem p {
+  line-height: 2rem;
+  padding-top: 3px;
+}
+
+.checkButton,
+.deleteButton {
+  font-size: 1.7rem;
 }

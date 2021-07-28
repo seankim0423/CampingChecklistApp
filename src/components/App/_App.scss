@@ -1,9 +1,13 @@
 body {
-  background-image: url(../../assets/header-background-camping-2.jpg);
+  background-image: url(../../assets/background-img-copy.jpeg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
-  padding: 20px 0;
+}
+
+.App {
+  width: 75%;
+  margin: 120px auto;
 }
 
 header {

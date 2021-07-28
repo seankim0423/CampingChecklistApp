@@ -1,13 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet');
 
-* {
-  font-family: "Roboto", sans-serif;
+*,
+select,
+input {
+  font-family: "Poppins", sans-serif;
   font-size: 100%;
 }
 
 h1 {
-  color: white;
-  text-align: center;
-  letter-spacing: 0.9rem;
   font-size: 3rem;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }

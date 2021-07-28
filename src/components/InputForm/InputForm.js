@@ -47,6 +47,24 @@ const InputForm = () => {
   return (
     <div className="formContainer">
       <form className="newItemForm" action="submit" onSubmit={handleSubmit}>
+        <label htmlFor="newItemCategory" className="sr-only">
+          Category:
+        </label>
+        <select
+          name="newItemCategory"
+          id="newItemCategory"
+          className="newItemCategory"
+          onChange={handleChange}
+          value={itemCategory}
+        >
+          <option disabled value="placeholder">
+            Select Category
+          </option>
+          <option value="Camping Gear">Camping Gear</option>
+          <option value="Food">Food</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Etc">Etc.</option>
+        </select>
         <label className="sr-only" htmlFor="newItemName">
           Item Name
         </label>
@@ -56,8 +74,8 @@ const InputForm = () => {
           className="newItemName"
           onChange={handleChange}
           value={itemName}
-          placeholder="Item Name"
-          maxlength="20"
+          placeholder="Item"
+          maxLength="15"
         />
         <label className="sr-only" htmlFor="newItemQuantity">
           Quantity
@@ -69,25 +87,10 @@ const InputForm = () => {
           onChange={handleChange}
           value={itemQty}
           placeholder="Quantity"
+          maxLength="3"
         />
-        <label htmlFor="newItemCategory" className="sr-only">
-          Category:
-        </label>
-        <select
-          name="newItemCategory"
-          id="newItemCategory"
-          onChange={handleChange}
-          value={itemCategory}
-        >
-          <option disabled value="placeholder">
-            Select Category
-          </option>
-          <option value="Camping Gear">Camping Gear</option>
-          <option value="Food">Food</option>
-          <option value="Clothing">Clothing</option>
-        </select>
 
-        <button className="iconButton changeBlue" type="submit">
+        <button className="iconButton addButton changeBlue" type="submit">
           <FontAwesomeIcon icon={faPlusSquare} />
         </button>
       </form>
