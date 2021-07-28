@@ -90,8 +90,10 @@ const InputForm = () => {
           maxLength="3"
         />
 
-        <button className="iconButton addButton changeBlue" type="submit">
-          <FontAwesomeIcon icon={faPlusSquare} />
+        {/* <button className="iconButton addButton changeBlue" type="submit"> */}
+        <button className="addButton changeBlue" type="submit">
+          {/* <FontAwesomeIcon icon={faPlusSquare} /> */}
+          ADD
         </button>
       </form>
     </div>

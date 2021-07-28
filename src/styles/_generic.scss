@@ -23,4 +23,12 @@ ul {
 .changeBlue:hover,
 .changeBlue:focus {
   color: blue;
+  border-color: blue;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

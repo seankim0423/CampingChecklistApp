@@ -229,7 +229,7 @@ html {
 }
 
 /* set minimum height for body to be 100vh */
-body {
+.App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;

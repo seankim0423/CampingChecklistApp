@@ -39,15 +39,32 @@ const App = () => {
         <h1>Camping Checklist</h1>
       </header>
 
-      <InputForm />
-      <ListContainer listArray={checkList} />
+      <main>
+        <InputForm />
+        <ListContainer listArray={checkList} />
+      </main>
 
-      {/* <footer>
-        <p>Made at Juno</p>
-      </footer> */}
+      <footer>
+        <p>Created at Juno College</p>
+      </footer>
     </div>
   ) : (
-    <h2 className="loadingText">Loading...</h2>
+    <div className="App wrapper flexCenter">
+      <div class="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   );
 };
 
