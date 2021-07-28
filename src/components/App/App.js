@@ -50,7 +50,7 @@ const App = () => {
     </div>
   ) : (
     <div className="App wrapper flexCenter">
-      <div class="lds-spinner">
+      <div className="lds-spinner">
         <div></div>
         <div></div>
         <div></div>
