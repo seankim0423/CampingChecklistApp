@@ -1,0 +1,32 @@
+.rowItem {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+  margin: 15px 0;
+}
+
+.itemNameTextBox {
+  width: 150px;
+  margin-left: 5px;
+}
+
+.itemQuantityTextBox {
+  width: 30px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.checkedItem {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.rowItem p {
+  line-height: 2rem;
+  padding-top: 3px;
+}
+
+.checkButton,
+.deleteButton {
+  font-size: 1.7rem;
+}
