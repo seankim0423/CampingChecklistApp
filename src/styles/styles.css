@@ -338,11 +338,6 @@ ul {
   color: red;
 }
 
-.changeOrange:hover > svg,
-.changeOrange:focus > svg {
-  color: orange;
-}
-
 .changeBlue:hover,
 .changeBlue:focus {
   color: blue;
