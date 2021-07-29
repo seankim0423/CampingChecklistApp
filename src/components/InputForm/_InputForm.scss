@@ -17,10 +17,16 @@
   width: 170px;
 }
 
+.newItemCategory {
+  padding-left: 1px;
+}
+
 .addButton {
   height: 100%;
   width: 70px;
   background-color: white;
   padding: 0;
   padding: 5px 5px;
+  cursor: pointer;
+  text-transform: uppercase;
 }

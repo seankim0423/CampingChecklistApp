@@ -1,9 +1,10 @@
 @import "./setup";
 @import "./fonts";
 @import "./generic";
-@import "./mediaQuery";
 @import "../components/App/App";
 @import "../components/CategoryContainer/CategoryContainer";
 @import "../components/InputForm/InputForm";
 @import "../components/ItemRow/ItemRow";
 @import "../components/ListContainer/ListContainer";
+@import "../components/FilterContainer/FilterContainer";
+@import "./mediaQuery";

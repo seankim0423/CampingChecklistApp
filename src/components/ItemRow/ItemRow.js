@@ -8,43 +8,46 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 const ItemRow = (props) => {
+  // destructure props
+  const { name, quantity, key, checked } = props.item;
+
+  // function to remove item from the Firebase
   const handleDelete = (keyOfItemToDelete) => {
     const dbRef = firebase.database().ref();
     dbRef.child(keyOfItemToDelete).remove();
   };
 
+  // function to update the checked value from the Firebase
   const handleCheck = (keyOfItemToCheck) => {
     const dbRef = firebase.database().ref();
     dbRef.child(keyOfItemToCheck).update({
       checked: !props.item.checked,
     });
   };
-  const { name, quantity, key, checked } = props.item;
 
   return (
     <li className="rowItem">
-      {props.item.checked ? (
-        <button
-          className="iconButton checkButton changeBlue"
-          onClick={() => handleCheck(key)}
-        >
+      {/* add checkbox icons for checked */}
+      <button
+        className="iconButton checkButton changeBlue"
+        onClick={() => handleCheck(key)}
+      >
+        {props.item.checked ? (
           <FontAwesomeIcon icon={faCheckSquare} />
-        </button>
-      ) : (
-        <button
-          className="iconButton checkButton changeBlue"
-          onClick={() => handleCheck(key)}
-        >
+        ) : (
           <FontAwesomeIcon icon={faSquare} />
-        </button>
-      )}
+        )}
+      </button>
 
+      {/* add checkedItem class to add strike through the name and quantity if checked==true */}
       <p className={`itemNameTextBox ${checked ? "checkedItem" : ""}`}>
         {name}
       </p>
       <p className={`itemQuantityTextBox ${checked ? "checkedItem" : ""}`}>
         {quantity}
       </p>
+
+      {/* add delete icon button to call handleDelete function onClick */}
       <button
         className="iconButton deleteButton changeRed"
         onClick={() => handleDelete(key)}

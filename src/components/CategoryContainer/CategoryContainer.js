@@ -1,5 +1,6 @@
 import ItemRow from "../ItemRow/ItemRow";
 
+// display items per category
 const CategoryContainer = (props) => {
   return (
     <li key={props.category} className="categoryContainer">

@@ -338,10 +338,19 @@ ul {
   color: red;
 }
 
+.changeOrange:hover > svg,
+.changeOrange:focus > svg {
+  color: orange;
+}
+
 .changeBlue:hover,
 .changeBlue:focus {
   color: blue;
   border-color: blue;
+}
+
+.buttonLabel {
+  margin-left: 8px;
 }
 
 .flexCenter {
@@ -352,7 +361,7 @@ ul {
 }
 
 body {
-  background-image: url(../../assets/background-img-copy.jpeg);
+  background-image: url(../../assets/background-img-small.jpeg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
@@ -518,12 +527,18 @@ h2 {
   width: 170px;
 }
 
+.newItemCategory {
+  padding-left: 1px;
+}
+
 .addButton {
   height: 100%;
   width: 70px;
   background-color: white;
   padding: 0;
   padding: 5px 5px;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .rowItem {
@@ -565,4 +580,19 @@ h2 {
   margin: 0;
   padding: 0;
   gap: 30px;
+}
+
+.filterContainer {
+  margin-bottom: 20px;
+}
+
+.changeOrange:hover > svg,
+.changeOrange:focus > svg {
+  color: orange;
+}
+
+@media (max-width: 850px) {
+  .App {
+    width: 65%;
+  }
 }/*# sourceMappingURL=styles.css.map */

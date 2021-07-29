@@ -2,17 +2,20 @@ import { useState, useEffect } from "react";
 import firebase from "../../firebase";
 import InputForm from "../InputForm/InputForm";
 import ListContainer from "../ListContainer/ListContainer";
+import FilterContainer from "../FilterContainer/FilterContainer";
 
 const App = () => {
+  // States for the checklist array, filteredlist array, and a boolean state for when the data is loaded.
   const [checkList, setCheckList] = useState([{}]);
+  const [filteredList, setFilteredList] = useState([{}]);
   const [loadedData, setLoadedData] = useState(false);
 
-  // This is the useEffect for my Firebase value listener
+  // useEffect for the Firebase value listener
   useEffect(() => {
-    // We go get an object that REFERENCES our configured database:
+    // Firebase ref.
     const dbRef = firebase.database().ref();
 
-    // We set up a listener for data in our firebase, which will fire when that data appears (ie. the page loads) or those VALUES change (this is often referred to as a SUBSCRIPTION to a third-party data source):
+    // Set the new state from the imported data on the page load, and when the values change. (subscription to the data source)
     dbRef.on("value", (snapshot) => {
       const myData = snapshot.val();
       const newArray = [];
@@ -28,12 +31,31 @@ const App = () => {
         newArray.push(itemObject);
       }
       setCheckList(newArray);
+      // copy the checklist to the filtered list initially for the initial display
+      setFilteredList(newArray);
+      // set loadedData true.
       setLoadedData(true);
     });
   }, []);
   // End of userEffect
 
+  // function to filter the checklist based on the parameter received from FilterContainer.
+  // If checked==true, filter the list to show only the items with the property checked==true
+  // If checked==false, return the filteredList to show every item.
+  const filterList = (checked) => {
+    if (checked === true) {
+      const copyOfCheckList = [...checkList];
+      const filteredList = copyOfCheckList.filter((checkListObj) => {
+        return checkListObj.checked === false;
+      });
+      setFilteredList(filteredList);
+    } else {
+      setFilteredList(checkList);
+    }
+  };
+
   return loadedData ? (
+    // If loadedData == true, then display the components.
     <div className="App wrapper">
       <header>
         <h1>Camping Checklist</h1>
@@ -41,7 +63,8 @@ const App = () => {
 
       <main>
         <InputForm />
-        <ListContainer listArray={checkList} />
+        <FilterContainer filterList={filterList} />
+        <ListContainer listArray={filteredList} />
       </main>
 
       <footer>
@@ -49,6 +72,7 @@ const App = () => {
       </footer>
     </div>
   ) : (
+    // If loadedData == false, display the loading animation instead.
     <div className="App wrapper flexCenter">
       <div className="lds-spinner">
         <div></div>
@@ -69,29 +93,3 @@ const App = () => {
 };
 
 export default App;
-
-// MVP: Create a checklist for camping items, allowing users to add and delete items onto the list along with quantities and categories, to be stored in Firebase
-
-// Stretch goals:
-// 1. Allow editing the items on the list
-// 2. Using categories. Food, camping gear, etc., sort and display items in separate groups.
-// 3. Add a dropdown menu to filter the items based on their categories
-// 4. Add a datalist to show list of items in a dropdown as the user types in the item field.
-// 5. Import FontAwesome to replace the delete button with an icon.
-
-// Display Firebase checklist items and their quantities and cateogories on the page
-// Set up an empty state to hold the list of items
-// Get the item array from Firebase
-// Connect to Firebase only once when our component mounts using useEffect.
-// Store the retrieved data in a state
-// Display the list of items on the page
-
-// Let the user add items to the database along with quantity and category
-// Add a form with a text input for: item name, quantity, and category (dropdown?)
-// Set up 3 empty states, 1 for item name, 1 for qty, and 1 for category.
-// Store the 3 input fields into the states as the user types them in.
-// On submit, verify that all 3 states are filled in, and then push them into Firebase
-
-// Add a button that lets the user delete items from the database
-// Add a delete icon next to each item in our JSX
-// onClick calls a function that will remove the item from the firebase.

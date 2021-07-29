@@ -2,12 +2,13 @@ import { useState } from "react";
 import firebase from "../../firebase";
 
 const InputForm = () => {
+  // set states for the 3 user input fields: itemName, itemQty, itemCategory
   const [itemName, setItemName] = useState("");
   const [itemQty, setItemQty] = useState("");
-  const [itemCategory, setItemCategory] = useState("placeholder");
+  const [itemCategory, setItemCategory] = useState("");
 
+  // Function to handle change. Runs the setState methods depending on which userinput field it is.
   const handleChange = (e) => {
-    // setUserInput(e.target.value);
     if (e.target.id === "newItemName") {
       setItemName(e.target.value);
     } else if (e.target.id === "newItemCategory") {
@@ -17,11 +18,12 @@ const InputForm = () => {
     }
   };
 
+  // Function to handle userinput submit. Check if all three fields have been populated.
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (itemName !== "" && itemQty !== "" && itemCategory !== "Select") {
-      // We create a refernce to our Firebase database:
+    if (itemName !== "" && itemQty !== "" && itemCategory !== "placeholder") {
+      // a refernce to our Firebase database:
       const dbRef = firebase.database().ref();
 
       const userInputItem = {
@@ -31,18 +33,22 @@ const InputForm = () => {
         checked: false,
       };
 
+      // push the new item object to the Firebase.
       dbRef.push(userInputItem);
 
+      // Return the user input fields to blank.
       setItemName("");
       setItemQty("");
       setItemCategory("placeholder");
     } else {
+      // Alert if not all fields are filled in.
       alert("Missing input");
     }
   };
 
   return (
-    <div className="formContainer">
+    // Display the form
+    <section className="formContainer">
       <form className="newItemForm" action="submit" onSubmit={handleSubmit}>
         <label htmlFor="newItemCategory" className="sr-only">
           Category:
@@ -53,8 +59,9 @@ const InputForm = () => {
           className="newItemCategory"
           onChange={handleChange}
           value={itemCategory}
+          required
         >
-          <option disabled value="placeholder">
+          <option disabled value="">
             Select Category
           </option>
           <option value="Camping Gear">Camping Gear</option>
@@ -62,6 +69,7 @@ const InputForm = () => {
           <option value="Clothing">Clothing</option>
           <option value="Etc">Etc.</option>
         </select>
+
         <label className="sr-only" htmlFor="newItemName">
           Item Name
         </label>
@@ -73,27 +81,28 @@ const InputForm = () => {
           value={itemName}
           placeholder="Item"
           maxLength="15"
+          required
         />
+
         <label className="sr-only" htmlFor="newItemQuantity">
           Quantity
         </label>
         <input
-          type="text"
+          type="number"
           id="newItemQuantity"
           className="newItemQuantity"
           onChange={handleChange}
           value={itemQty}
           placeholder="Quantity"
           maxLength="3"
+          required
         />
 
-        {/* <button className="iconButton addButton changeBlue" type="submit"> */}
         <button className="addButton changeBlue" type="submit">
-          {/* <FontAwesomeIcon icon={faPlusSquare} /> */}
-          ADD
+          Add
         </button>
       </form>
-    </div>
+    </section>
   );
 };
 
