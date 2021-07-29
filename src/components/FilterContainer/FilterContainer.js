@@ -8,8 +8,8 @@ const FilterContainer = (props) => {
 
   // useEffect to run filterList function when the filterCheck value is changed
   useEffect(() => {
-    console.log(filterCheck);
     props.filterList(filterCheck);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filterCheck]);
 
   // function to invert the filterCheck value onClick
