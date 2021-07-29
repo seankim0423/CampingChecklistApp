@@ -39,7 +39,7 @@ const InputForm = () => {
       // Return the user input fields to blank.
       setItemName("");
       setItemQty("");
-      setItemCategory("placeholder");
+      setItemCategory("");
     } else {
       // Alert if not all fields are filled in.
       alert("Missing input");
