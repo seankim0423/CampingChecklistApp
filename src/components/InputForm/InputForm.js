@@ -94,7 +94,8 @@ const InputForm = () => {
           onChange={handleChange}
           value={itemQty}
           placeholder="Quantity"
-          maxLength="3"
+          max="100"
+          min="1"
           required
         />
 
