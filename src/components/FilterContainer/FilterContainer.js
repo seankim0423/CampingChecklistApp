@@ -25,10 +25,16 @@ const FilterContainer = (props) => {
       >
         {filterCheck ? (
           // display checked circle icon when filterCheck==true
-          <FontAwesomeIcon icon={faCheckCircle} />
+          <div>
+            <span className="sr-only">Checked Circle</span>
+            <FontAwesomeIcon icon={faCheckCircle} aria-hidden={false} />
+          </div>
         ) : (
           // display empty circle icon when filterCheck==false
-          <FontAwesomeIcon icon={faCircle} />
+          <div>
+            <span className="sr-only">Unchecked Circle</span>
+            <FontAwesomeIcon icon={faCircle} aria-hidden={false} />
+          </div>
         )}
         <span className="buttonLabel">Filter Remaining Items</span>
       </button>

@@ -34,13 +34,13 @@ const ItemRow = (props) => {
       >
         {props.item.checked ? (
           <div>
-            <span className="sr-only">Checked Checkbox</span>
-            <FontAwesomeIcon icon={faCheckSquare} />{" "}
+            <span className="sr-only">Checked checkbox</span>
+            <FontAwesomeIcon icon={faCheckSquare} aria-hidden={true} />{" "}
           </div>
         ) : (
           <div>
-            <span className="sr-only">Unchecked Checkbox</span>
-            <FontAwesomeIcon icon={faSquare} />{" "}
+            <span className="sr-only">Unchecked checkbox</span>
+            <FontAwesomeIcon icon={faSquare} aria-hidden={true} />{" "}
           </div>
         )}
       </button>
@@ -58,7 +58,10 @@ const ItemRow = (props) => {
         className="iconButton deleteButton changeRed"
         onClick={() => handleDelete(key)}
       >
-        <FontAwesomeIcon icon={faTrashAlt} />
+        <div>
+          <span className="sr-only">Delete</span>
+          <FontAwesomeIcon icon={faTrashAlt} aria-hidden={true} />
+        </div>
       </button>
     </li>
   );
