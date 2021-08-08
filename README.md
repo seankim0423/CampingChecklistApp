@@ -1,15 +1,16 @@
 # Camping Checklist App
 
-Simple checklist app created with React and Firebase to help with packing for camping trips.
+Simple checklist app created using React and Firebase to help with packing for camping trips.
 
 ## Motivation
 
-As a camping lover, I wanted to create an app which my camping crew can use to to view, edit, and check off items as we prepare for camping. I learned and utilized Firebase to store the data which everyone can access together. It was also a great practice planing and structuring React components to keep the codes clean and reuseable.
+As a camping lover, I wanted to create an app which my camping crew can use to to view, edit, and check off items as we prepare for camping. I learned and utilized Firebase to store the data which everyone can access together. It was also a great opportunity to follow best practices in organizing React components to keep the codes clean and reuseable.
 
 ## Tech Used
 
 - HTML5
 - CSS3
+- Sass
 - ES6
 - React
 - JSX
@@ -21,6 +22,8 @@ As a camping lover, I wanted to create an app which my camping crew can use to t
 - Fully accessible using only keyboards
 - Accessing and modiyfing database stored in Firebase
 - Utilizing useEffect and useState hooks to efficiently store states and update DOM based on their updates
+- React components organized following best practices
+- Sass used to keep styling files organized and separated into generic styling, partials, and component-specific styling
 
 ## Acknowledgments
 

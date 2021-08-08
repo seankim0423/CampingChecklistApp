@@ -3,6 +3,7 @@ import firebase from "../../firebase";
 import InputForm from "../InputForm/InputForm";
 import ListContainer from "../ListContainer/ListContainer";
 import FilterContainer from "../FilterContainer/FilterContainer";
+import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 
 const App = () => {
   // States for the checklist array, filteredlist array, and a boolean state for when the data is loaded.
@@ -73,22 +74,7 @@ const App = () => {
     </div>
   ) : (
     // If loadedData == false, display the loading animation instead.
-    <div className="App wrapper flexCenter">
-      <div className="lds-spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+    <LoadingAnimation />
   );
 };
 
