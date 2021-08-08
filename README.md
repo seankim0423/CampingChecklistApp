@@ -1,6 +1,6 @@
 # Camping Checklist App
 
-It's a simple checklist app to help preparing for camping trips.
+Simple checklist app created with React and Firebase to help with packing for camping trips.
 
 ## Motivation
 
@@ -10,10 +10,10 @@ As a camping lover, I wanted to create an app which my camping crew can use to t
 
 - HTML5
 - CSS3
-- React
-- Firebase
 - ES6
+- React
 - JSX
+- Firebase
 
 ## Features
 
@@ -25,3 +25,23 @@ As a camping lover, I wanted to create an app which my camping crew can use to t
 ## Acknowledgments
 
 - [Font Awesome](https://fontawesome.com/)
+
+## Setup Instructions
+
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.
+
+Installation:
+
+`npm install`
+
+To Run Test Suite:
+
+`npm test`
+
+To Start Server:
+
+`npm start`
+
+To Visit App:
+
+`localhost:3000/`
