@@ -379,6 +379,99 @@ footer {
   color: white;
 }
 
+h2 {
+  border-bottom: 1.5px black solid;
+  padding-bottom: 3px;
+}
+
+.categoryContainer {
+  list-style: none;
+}
+
+.newItemForm {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  align-content: center;
+  align-items: center;
+}
+
+.newItemName,
+.newItemCategory,
+.newItemQuantity,
+.addButton {
+  padding: 5px 5px;
+  border: black solid 2px;
+  border-radius: 6px;
+  width: 170px;
+}
+
+.newItemCategory {
+  padding-left: 1px;
+}
+
+.addButton {
+  height: 100%;
+  width: 70px;
+  background-color: white;
+  padding: 0;
+  padding: 5px 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.rowItem {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+  margin: 15px 0;
+}
+
+.itemNameTextBox {
+  text-transform: capitalize;
+  width: 150px;
+  margin-left: 5px;
+}
+
+.itemQuantityTextBox {
+  width: 30px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.checkedItem {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.rowItem p {
+  line-height: 2rem;
+  padding-top: 3px;
+}
+
+.checkButton,
+.deleteButton {
+  font-size: 1.7rem;
+}
+
+.listContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.filterContainer {
+  margin-bottom: 20px;
+}
+
+.changeOrange:hover > svg,
+.changeOrange:focus > svg {
+  color: orange;
+}
+
 .lds-spinner {
   color: official;
   display: inline-block;
@@ -494,99 +587,6 @@ footer {
     opacity: 0;
   }
 }
-h2 {
-  border-bottom: 1.5px black solid;
-  padding-bottom: 3px;
-}
-
-.categoryContainer {
-  list-style: none;
-}
-
-.newItemForm {
-  display: flex;
-  gap: 13px;
-  flex-wrap: wrap;
-  margin: 40px 0;
-  align-content: center;
-  align-items: center;
-}
-
-.newItemName,
-.newItemCategory,
-.newItemQuantity,
-.addButton {
-  padding: 5px 5px;
-  border: black solid 2px;
-  border-radius: 6px;
-  width: 170px;
-}
-
-.newItemCategory {
-  padding-left: 1px;
-}
-
-.addButton {
-  height: 100%;
-  width: 70px;
-  background-color: white;
-  padding: 0;
-  padding: 5px 5px;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.rowItem {
-  display: flex;
-  list-style: none;
-  gap: 5px;
-  margin: 15px 0;
-}
-
-.itemNameTextBox {
-  text-transform: capitalize;
-  width: 150px;
-  margin-left: 5px;
-}
-
-.itemQuantityTextBox {
-  width: 30px;
-  margin-right: 10px;
-  text-align: right;
-}
-
-.checkedItem {
-  text-decoration: line-through;
-  color: grey;
-}
-
-.rowItem p {
-  line-height: 2rem;
-  padding-top: 3px;
-}
-
-.checkButton,
-.deleteButton {
-  font-size: 1.7rem;
-}
-
-.listContainer {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  gap: 30px;
-}
-
-.filterContainer {
-  margin-bottom: 20px;
-}
-
-.changeOrange:hover > svg,
-.changeOrange:focus > svg {
-  color: orange;
-}
-
 @media (max-width: 850px) {
   .App {
     width: 65%;

@@ -33,9 +33,15 @@ const ItemRow = (props) => {
         onClick={() => handleCheck(key)}
       >
         {props.item.checked ? (
-          <FontAwesomeIcon icon={faCheckSquare} />
+          <div>
+            <span className="sr-only">Checked Checkbox</span>
+            <FontAwesomeIcon icon={faCheckSquare} />{" "}
+          </div>
         ) : (
-          <FontAwesomeIcon icon={faSquare} />
+          <div>
+            <span className="sr-only">Unchecked Checkbox</span>
+            <FontAwesomeIcon icon={faSquare} />{" "}
+          </div>
         )}
       </button>
 
