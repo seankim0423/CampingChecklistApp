@@ -69,7 +69,7 @@ const App = () => {
       </main>
 
       <footer>
-        <p>Created at Juno College</p>
+        <p>© 2021 Sean Kim</p>
       </footer>
     </div>
   ) : (
