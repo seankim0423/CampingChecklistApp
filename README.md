@@ -4,7 +4,7 @@ Simple checklist app created using React and Firebase to help with packing for c
 
 - [Live Site](https://camping-checklist.netlify.app/)
 
-![camping-checklist-app](https://user-images.githubusercontent.com/49259243/133847233-88097260-eeea-48d5-be60-bd7831261c48.png)
+[![camping-checklist-app](https://user-images.githubusercontent.com/49259243/133847233-88097260-eeea-48d5-be60-bd7831261c48.png)](https://camping-checklist.netlify.app/)
 
 ## Motivation
 
