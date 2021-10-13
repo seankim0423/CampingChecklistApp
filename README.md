@@ -29,6 +29,7 @@ As a camping lover, I wanted to create an app which my camping crew can use to t
 - Utilizing useEffect and useState hooks to efficiently store states and update DOM based on their updates
 - React components organized following best practices
 - Sass used to keep styling files organized and separated into generic styling, partials, and component-specific styling
+- Automatically sort the retrieved items by their categories and names in an alphabetical order.
 
 ## Acknowledgments
 
