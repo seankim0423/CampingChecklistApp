@@ -1,6 +1,6 @@
 # Camping Checklist App
 
-Simple checklist app created using React and Firebase to help with packing for camping trips.
+A checklist app created using React and Firebase to help with packing for camping trips.
 
 - [Live Site](https://camping-checklist.netlify.app/)
 

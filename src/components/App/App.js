@@ -10,10 +10,8 @@ const App = () => {
   const [checkList, setCheckList] = useState([{}]);
   const [filteredList, setFilteredList] = useState([{}]);
   const [loadedData, setLoadedData] = useState(false);
-
-  // useEffect for the Firebase value listener
+  
   useEffect(() => {
-    // Firebase ref.
     const dbRef = firebase.database().ref();
 
     // Set the new state from the imported data on the page load, and when the values change. (subscription to the data source)
