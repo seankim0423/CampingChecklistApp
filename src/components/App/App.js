@@ -38,7 +38,6 @@ const App = () => {
       setLoadedData(true);
     });
   }, []);
-  // End of userEffect
 
   // function to filter the checklist based on the parameter received from FilterContainer.
   // If checked==true, filter the list to show only the items with the property checked==true

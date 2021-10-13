@@ -1,18 +1,22 @@
 import CategoryContainer from "../CategoryContainer/CategoryContainer";
+import {useState, useEffect} from "react";
 
 // import "./ListContainer.css";
 
 const ListContainer = (props) => {
+
+  const [groupedItems, setGroupedItems] = useState({});
+
   // Generate a new object of the list items sorted based on categories
-  // Grouping Technique resource: https://gist.github.com/JamieMason/0566f8412af9fe6a1d470aa1e089a752
-  const groupBy = (key) => (array) =>
-    array.reduce((objectsByKeyValue, obj) => {
-      const value = obj[key];
-      objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(obj);
-      return objectsByKeyValue;
+
+  useEffect(() => {
+    const groupList = props.listArray.reduce((objByCategory, obj) => {
+      objByCategory[obj["category"]] = (objByCategory[obj["category"]] || []).concat(obj)
+      return objByCategory
     }, {});
-  const groupByCategory = groupBy("category");
-  const groupedItems = groupByCategory(props.listArray);
+    setGroupedItems(groupList);
+
+  },[props.listArray])
 
   return (
     <section>
